@@ -1,182 +1,113 @@
-'use client';
+// pages/news.tsx or components/News.tsx
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
 
-import Image from 'next/image';
-import { FC } from 'react';
-
-interface CardData {
-  date: string;
-  title: string;
-  subtitle: string;
-  progress: number;
-  users: string[];
-  countdown: string;
-  theme: 'green' | 'orange' | 'red' | 'blue';
-}
-
-const cardColors = {
-  green: {
-    bgGradient: 'bg-gradient-to-br from-[#107667ed] via-[#151419] to-[#151419]',
-    progress: 'bg-[#01c3a8]',
-    border: 'border-[#01c3a8]',
-  },
-  orange: {
-    bgGradient: 'bg-gradient-to-br from-[#ffb74194] via-[#151419] to-[#151419]',
-    progress: 'bg-[#ffb741]',
-    border: 'border-[#ffb741]',
-  },
-  red: {
-    bgGradient: 'bg-gradient-to-br from-[#a63d2a82] via-[#151419] to-[#151419]',
-    progress: 'bg-[#a63d2a]',
-    border: 'border-[#a63d2a]',
-  },
-  blue: {
-    bgGradient: 'bg-gradient-to-br from-[#00458f8f] via-[#151419] to-[#151419]',
-    progress: 'bg-[#1890ff]',
-    border: 'border-[#1890ff]',
-  },
-};
-
-const cardData: CardData[] = [
-  {
-    date: 'Feb 2, 2021',
-    title: 'web designing',
-    subtitle: 'Prototyping',
-    progress: 90,
-    users: [
-      '/public/assets/images/mysql.png',
-      '/public/assets/images/mysql.png',
-    ],
-    countdown: '2 days left',
-    theme: 'green',
-  },
-  {
-    date: 'Feb 05, 2021',
-    title: 'mobile app',
-    subtitle: 'Shopping',
-    progress: 30,
-    users: [
-      '/public/assets/images/mysql.png',
-      '/public/assets/images/mysql.png',
-    ],
-    countdown: '3 weeks left',
-    theme: 'orange',
-  },
-  {
-    date: 'March 03, 2021',
-    title: 'dashboard',
-    subtitle: 'Medical',
-    progress: 50,
-    users: [
-      '/public/assets/images/mysql.png',
-      '/public/assets/images/mysql.png',
-    ],
-    countdown: '3 weeks left',
-    theme: 'red',
-  },
-  {
-    date: 'March 08, 2021',
-    title: 'web designing',
-    subtitle: 'Wireframing',
-    progress: 20,
-    users: [
-      '/public/assets/images/mysql.png',
-      '/public/assets/images/mysql.png',
-    ],
-    countdown: '3 weeks left',
-    theme: 'blue',
-  },
-];
-
-const ProjectCards: FC = () => {
-  if (!cardData || cardData.length === 0) {
-    return <p className="text-center text-white">No project data available.</p>;
-  }
+const News = () => {
+  const newsData = [
+    {
+      title: "Amazing First Title",
+      date: "Jan 29, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
+      src:
+        "/assets/images/react_app.png",
+      href: "#",
+    },
+    {
+      title: "Amazing Second Title that is Quite Long",
+      date: "Jan 29, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati ex natus nulla...",
+      src:
+        "/assets/images/angular.png",
+      href: "#",
+    },
+    {
+      title: "Amazing Title",
+      date: "Jan 29, 2018",
+      excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae...",
+      src:
+        "/public/assets/images/angular.png",
+      href: "#",
+    },
+    {
+      title: "Amazing Forth Title that is Quite Long",
+      date: "Jan 29, 2018",
+      excerpt: "Lorem ipsum dolor sit amet!",
+      src:
+        "/public/assets/images/angular.png",
+      href: "#",
+    },
+    {
+      title: "Amazing Fifth Title",
+      date: "Jan 29, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat...",
+      src:
+        "/public/assets/images/angular.png",
+      href: "#",
+    },
+    {
+      title: "Amazing 6th Title",
+      date: "Jan 29, 2018",
+      excerpt:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
+      src:
+        "/public/assets/images/angular.png",
+      href: "#",
+    },
+  ];
 
   return (
-    <section className="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto py-20 px-4">
-      {cardData.map((card, idx) => {
-        const color = cardColors[card.theme] ?? cardColors.green;
+    <>
 
-        return (
-          <div
-            key={idx}
-            className={`relative w-80 min-h-80 text-white text-center rounded-[2.25rem] shadow-2xl p-4 ${color.bgGradient} border-2 ${color.border}`}
-          >
-            {/* Header */}
-            <div className="flex justify-between items-center text-sm mb-6">
-              <span className="text-gray-300">{card.date}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-white cursor-pointer"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
 
-            {/* Body */}
-            <div>
-              <h3 className="text-xl font-semibold capitalize mb-1">{card.title}</h3>
-              <p className="text-gray-300 text-sm mb-4">{card.subtitle}</p>
+      <Head>
+        <title>News Cards</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+      </Head>
 
-              <div className="text-left text-sm">
-                <span className="block font-semibold mb-1">Progress</span>
-                <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full ${color.progress}`}
-                    style={{ width: `${card.progress}%` }}
-                  ></div>
+      <div className="bg-gray-700 min-h-screen py-10 px-4">
+        <div className="max-w-6xl mx-auto flex flex-wrap gap-4 justify-center">
+          {newsData.map((news, idx) => (
+            <div
+              key={idx}
+              className="relative overflow-hidden rounded-lg shadow-lg group w-full sm:w-[48%] lg:w-[31%] h-[12rem] lg:h-[20rem]"
+            >
+              <Link href={news.href} className="absolute inset-0 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-0" />
+              <Image
+                src={news.src}
+                alt={news.title}
+                layout="fill"
+                objectFit="cover"
+                className="transition-transform duration-[3000ms] group-hover:scale-110 z-[-1]"
+              />
+              <div className="absolute bottom-0 p-4 text-white transition duration-500 group-hover:bg-black/60 z-10">
+                <h2 className="text-lg font-semibold group-hover:text-yellow-400 transition-colors duration-500 mb-1">
+                  {news.title}
+                </h2>
+                <p className="text-xs text-gray-300 mb-2">{news.date}</p>
+                <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 overflow-hidden">
+                  <p className="text-sm">{news.excerpt}</p>
+                  <Link
+                    href={news.href}
+                    className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                  >
+                    Read more <i className="fas fa-long-arrow-alt-right ml-1" />
+                  </Link>
                 </div>
-                <span className="block text-right mt-1">{card.progress}%</span>
               </div>
             </div>
-
-            {/* Footer */}
-            <div className="absolute bottom-0 left-0 right-0 bg-[#151419] border-t border-neutral-800 rounded-b-[2.25rem] px-6 py-4 flex justify-between items-center">
-              <ul className="flex -space-x-4">
-                {card.users?.map((user, i) => (
-                  <li key={i}>
-                    <Image
-                      src={user}
-                      alt={`user-${i}`}
-                      width={30}
-                      height={30}
-                      className="rounded-full border border-neutral-700"
-                    />
-                  </li>
-                ))}
-                <li className={`w-6 h-6 flex items-center justify-center rounded-full ${color.progress} ml-4`}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-4 h-4 text-white"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </li>
-              </ul>
-              <a
-                href="#"
-                className="text-xs bg-[#222127] px-4 py-1 rounded-full hover:opacity-80"
-              >
-                {card.countdown}
-              </a>
-            </div>
-          </div>
-        );
-      })}
-    </section>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default ProjectCards;
+export default News;

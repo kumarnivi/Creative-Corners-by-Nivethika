@@ -83,14 +83,13 @@ const skills = [
 const SkillsSection = () => {
   return (
     <section className="relative bg-[#2c012d] py-16 px-4 sm:px-10">
-      {/* Section Heading */}
-      <div className="text-center mb-10">
-        <h1 className="text-white text-3xl sm:text-4xl font-bold uppercase relative inline-block font-[cursive]">
-          <span className="block w-[75px] h-[3px] bg-[#d148b2] mb-2 mx-auto"></span>
-          My Skills
-          <span className="block w-[75px] h-[3px] bg-[#d148b2] mt-2 mx-auto"></span>
-        </h1>
-      </div>
+     <div className="text-center mb-10">
+  <h1 className="text-white text-3xl sm:text-4xl font-bold uppercase relative inline-block font-[cursive]">
+    <span className="block w-[75px] h-[3px] bg-[#930e66] mb-2 ml-0"></span> {/* Top line to the left */}
+    My Skills
+    <span className="block w-[75px] h-[3px] bg-[#930e66] mt-2 ml-auto mr-0"></span> {/* Bottom line to the right */}
+  </h1>
+</div>
 
       {/* Swiper Carousel */}
       <Swiper
@@ -114,9 +113,9 @@ const SkillsSection = () => {
       >
         {skills.map((skill, index) => (
        <SwiperSlide key={index} className="h-full">
-  <div className="h-full bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between" id='skills'>
+  <div className="h-full bg-gradient-to-br from-[#121212b9] to-[#930e66] rounded-2xl shadow-lg   p-6 flex flex-col justify-between" id='skills'>
     <div>
-      <h2 className="text-[#930e66] text-lg font-bold mb-4">
+      <h2 className="text-[#eba2d3] text-lg font-bold mb-4">
         {skill.title}
       </h2>
       <div className="mb-4 rounded-md overflow-hidden">
@@ -128,7 +127,7 @@ const SkillsSection = () => {
           className="object-cover w-full h-[150px]"
         />
       </div>
-      <p className="text-gray-800 text-base font-[cursive]">
+      <p className="text-white text-base font-[cursive]">
         {skill.description}
       </p>
     </div>
