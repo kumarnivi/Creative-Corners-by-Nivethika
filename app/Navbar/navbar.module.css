@@ -1,0 +1,14 @@
+#nav{
+    margin-left: 65px;
+   
+}
+
+
+@media  (max-width:1234px) {
+
+    #nav{
+    margin-right: 50px ;
+    margin-left: 0;
+   
+}
+}

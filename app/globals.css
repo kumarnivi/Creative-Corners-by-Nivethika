@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* 
+:root {
+  --background: #930e66;
+  --foreground: #b9a2a2;
+} */
+
+/*===== Google Fonts =====*/
+/* @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); */
+/*===== Global CSS =====*/
+
+/*===== Google Fonts =====*/
+/* @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); */
+/*===== Global CSS =====*/
+
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --main-color: #930e66;
+  --main-bg:#d141a12b;
+  --background-color:#2B0617;
+  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --black-900: #ffff;
+  --black-400: #646f87;
+  --black-100: #f7f7f7;
+  --white: #fff;
+  --black-alpha-100: rgba(0, 0, 0, 0.05);
+}
+body {
+  font-family: "Kaushan Script", cursive !important;
+  font-size: 16px;
+  font-weight: normal;
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+* {
+  text-decoration: none !important;
+}
+ul {
+  list-style: none;
+}
+
+.btn-2 {
+  background-color: var(--white);
+  padding: 15px 40px;
+  border: none;
+  color: var(--main-color);
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 1px solid var(--main-color);
+  transition: all 0.3s ease-out;
+}
+.btn-2:hover {
+  color: var(--white);
+  background-color: var(--main-color);
+  border: none;
+}
+
+
+.perspective {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
