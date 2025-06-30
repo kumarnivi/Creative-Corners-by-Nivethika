@@ -96,7 +96,7 @@ const News = () => {
                   <p className="text-sm">{news.excerpt}</p>
                   <Link
                     href={news.href}
-                    className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                    className="jnkjhk mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
                   >
                     Read more <i className="fas fa-long-arrow-alt-right ml-1" />
                   </Link>
