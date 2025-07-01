@@ -6,12 +6,12 @@ import Head from "next/head";
 const News = () => {
   const newsData = [
     {
-      title: "Amazing First Title",
+      title: "Tea E-commerce App",
       date: "Jan 29, 2018",
       excerpt:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
       src:
-        "/assets/images/react_app.png",
+        "/assets/images/comrade.png",
       href: "#",
     },
     {
@@ -63,16 +63,22 @@ const News = () => {
     <>
 
 
-      <Head>
-        <title>News Cards</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-      </Head>
+     <section 
+      className="relative bg-cover bg-center bg-no-repeat py-16 px-4 sm:px-10 max-auto"
+      style={{ backgroundImage: 'url(/assets/images/projectbackground.avif)' }}
+     >
+      <div className="absolute inset-0 bg-[#340625e8] z-0" />
+       <div className="text-center mb-10">
+          <h1 className="text-white text-3xl sm:text-4xl font-bold uppercase relative inline-block font-[cursive]">
 
-      <div className="bg-gray-700 min-h-screen py-10 px-4">
-        <div className="max-w-6xl mx-auto flex flex-wrap gap-4 justify-center">
+            <span className="block w-[75px] h-[3px] bg-[#930e66] mb-2 ml-0"></span> {/* Top line to the left */}
+            Experience
+            <span className="block w-[75px] h-[3px] bg-[#930e66] mt-2 ml-auto mr-0"></span>
+          </h1>
+        </div>
+
+         <div className=" ">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-5 justify-center">
           {newsData.map((news, idx) => (
             <div
               key={idx}
@@ -88,7 +94,7 @@ const News = () => {
                 className="transition-transform duration-[3000ms] group-hover:scale-110 z-[0]"
               />
               <div className="absolute bottom-0 p-4 text-white transition duration-500 group-hover:bg-black/60 z-10">
-                <h2 className="text-lg font-semibold group-hover:text-yellow-400 transition-colors duration-500 mb-1">
+                <h2 className="text-lg font-semibold group-hover:text-[#930e66] transition-colors duration-500 mb-1">
                   {news.title}
                 </h2>
                 <p className="text-xs text-gray-300 mb-2">{news.date}</p>
@@ -106,6 +112,10 @@ const News = () => {
           ))}
         </div>
       </div>
+
+     </section>
+
+     
     </>
   );
 };
