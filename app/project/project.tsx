@@ -20,7 +20,7 @@ const News = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati ex natus nulla...",
       src:
-        "/assets/images/angular.png",
+        "/assets/images/react_app.png",
       href: "#",
     },
     {
@@ -28,7 +28,7 @@ const News = () => {
       date: "Jan 29, 2018",
       excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae...",
       src:
-        "/public/assets/images/angular.png",
+        "/assets/images/angular.png",
       href: "#",
     },
     {
@@ -36,7 +36,7 @@ const News = () => {
       date: "Jan 29, 2018",
       excerpt: "Lorem ipsum dolor sit amet!",
       src:
-        "/public/assets/images/angular.png",
+        "/assets/images/angular.png",
       href: "#",
     },
     {
@@ -45,7 +45,7 @@ const News = () => {
       excerpt:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat...",
       src:
-        "/public/assets/images/angular.png",
+        "/assets/images/angular.png",
       href: "#",
     },
     {
@@ -54,7 +54,7 @@ const News = () => {
       excerpt:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
       src:
-        "/public/assets/images/angular.png",
+        "/assets/images/angular.png",
       href: "#",
     },
   ];
@@ -85,7 +85,7 @@ const News = () => {
                 alt={news.title}
                 layout="fill"
                 objectFit="cover"
-                className="transition-transform duration-[3000ms] group-hover:scale-110 z-[-1]"
+                className="transition-transform duration-[3000ms] group-hover:scale-110 z-[0]"
               />
               <div className="absolute bottom-0 p-4 text-white transition duration-500 group-hover:bg-black/60 z-10">
                 <h2 className="text-lg font-semibold group-hover:text-yellow-400 transition-colors duration-500 mb-1">
