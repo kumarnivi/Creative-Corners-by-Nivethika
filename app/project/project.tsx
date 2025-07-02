@@ -8,67 +8,79 @@ const News = () => {
     {
       title: "Tea E-commerce App",
       date: "Jan 29, 2018",
-      excerpt:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
+      excerpt: [
+      { title: "React.js" },
+      { title: "Nodejs" },
+      { title: "mongodb" },
+    ],
       src:
         "/assets/images/comrade.png",
       href: "#",
+      sourceCode:"link"
     },
     {
-      title: "Amazing Second Title that is Quite Long",
+      title: "Leave Applay App",
       date: "Jan 29, 2018",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati ex natus nulla...",
+     excerpt: [
+      { title: "Responsive UI with Next.js" },
+      
+    ],
       src:
-        "/assets/images/react_app.png",
+        "/assets/images/Leav_app.png",
       href: "#",
+      sourceCode:"link"
     },
     {
-      title: "Amazing Title",
+      title: "Book Store",
       date: "Jan 29, 2018",
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae...",
+      excerpt: [
+      { title: "Responsive UI with Next.js" },
+     
+      { title: "Admin Dashboard" },
+    ],
       src:
-        "/assets/images/angular.png",
+        "/assets/images/BookStore.png",
       href: "#",
+      sourceCode:"Link"
     },
-    {
-      title: "Amazing Forth Title that is Quite Long",
-      date: "Jan 29, 2018",
-      excerpt: "Lorem ipsum dolor sit amet!",
-      src:
-        "/assets/images/angular.png",
-      href: "#",
-    },
-    {
-      title: "Amazing Fifth Title",
-      date: "Jan 29, 2018",
-      excerpt:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat...",
-      src:
-        "/assets/images/angular.png",
-      href: "#",
-    },
-    {
-      title: "Amazing 6th Title",
-      date: "Jan 29, 2018",
-      excerpt:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
-      src:
-        "/assets/images/angular.png",
-      href: "#",
-    },
+    // {
+    //   title: "Amazing Forth Title that is Quite Long",
+    //   date: "Jan 29, 2018",
+    //   excerpt: "Lorem ipsum dolor sit amet!",
+    //   src:
+    //     "/assets/images/angular.png",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Amazing Fifth Title",
+    //   date: "Jan 29, 2018",
+    //   excerpt:
+    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat...",
+    //   src:
+    //     "/assets/images/angular.png",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Amazing 6th Title",
+    //   date: "Jan 29, 2018",
+    //   excerpt:
+    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
+    //   src:
+    //     "/assets/images/angular.png",
+    //   href: "#",
+    // },
   ];
 
   return (
     <>
 
 
-     <section 
-      className="relative bg-cover bg-center bg-no-repeat py-16 px-4 sm:px-10 max-auto"
-      style={{ backgroundImage: 'url(/assets/images/projectbackground.avif)' }}
-     >
-      <div className="absolute inset-0 bg-[#340625e8] z-0" />
-       <div className="text-center mb-10">
+      <section
+        className="relative bg-cover bg-center bg-no-repeat py-16 px-4 sm:px-10 max-auto"
+        style={{ backgroundImage: 'url(/assets/images/projectbackground.avif)' }}
+      >
+        <div className="absolute inset-0 bg-[#340625e8] z-0" />
+        <div className="text-center mb-10">
           <h1 className="text-white text-3xl sm:text-4xl font-bold uppercase relative inline-block font-[cursive]">
 
             <span className="block w-[75px] h-[3px] bg-[#930e66] mb-2 ml-0"></span> {/* Top line to the left */}
@@ -77,45 +89,62 @@ const News = () => {
           </h1>
         </div>
 
-         <div className=" ">
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-5 justify-center">
-          {newsData.map((news, idx) => (
-            <div
-              key={idx}
-              className="relative overflow-hidden rounded-lg shadow-lg group w-full sm:w-[48%] lg:w-[31%] h-[12rem] lg:h-[20rem]"
-            >
-              <Link href={news.href} className="absolute inset-0 z-10" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-0" />
-              <Image
-                src={news.src}
-                alt={news.title}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-[3000ms] group-hover:scale-110 z-[0]"
-              />
-              <div className="absolute bottom-0 p-4 text-white transition duration-500 group-hover:bg-black/60 z-10">
-                <h2 className="text-lg font-semibold group-hover:text-[#930e66] transition-colors duration-500 mb-1">
-                  {news.title}
-                </h2>
-                <p className="text-xs text-gray-300 mb-2">{news.date}</p>
-                <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 overflow-hidden">
-                  <p className="text-sm">{news.excerpt}</p>
-                  <Link
-                    href={news.href}
-                    className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
-                  >
-                    Read more <i className="fas fa-long-arrow-alt-right ml-1" />
-                  </Link>
+        <div className=" ">
+          <div className="max-w-7xl mx-auto flex flex-wrap gap-5 justify-center">
+            {newsData.map((news, idx) => (
+              <div
+                key={idx}
+                className="relative overflow-hidden rounded-lg shadow-lg group w-full sm:w-[48%] lg:w-[31%] h-[12rem] lg:h-[20rem]"
+              >
+                <Link href={news.href} className="absolute inset-0 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-0" />
+                <Image
+                  src={news.src}
+                  alt={news.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-[3000ms] group-hover:scale-110 z-[0]"
+                />
+                <div className="absolute w-full bottom-0 p-4 text-white transition duration-500 group-hover:bg-black/100 z-10">
+                  <h2 className="text-lg font-semibold group-hover:text-[#930e66] transition-colors duration-500 mb-1">
+                    {news.title}
+                  </h2>
+                  <p className="text-xs text-gray-300 mb-2">{news.date}</p>
+                  <div className="max-h-0 opacity-0 group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 overflow-hidden">
+                    <div className="flex justify-center  w-full gap-2  ">
+                      {news.excerpt.map((item, index) => (
+                        <p key={index} className="text-sm bg-white rounded p-2 px-[20px] text-black ">
+                          - {item.title}
+                        </p>
+                      ))}
+                    </div>
+
+                  <div className="flex justify-between ">
+                   <Link
+                      href={news.href}
+                      className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                    >
+                      Live preview<i className="fas fa-long-arrow-alt-right ml-1" />
+                    </Link>
+
+                    <Link
+                    href={news.sourceCode}
+                      className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                    >
+                      Source Code
+                    </Link>
+                  </div>
+                   
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-     </section>
+      </section>
 
-     
+
     </>
   );
 };
