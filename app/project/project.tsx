@@ -9,39 +9,39 @@ const News = () => {
       title: "Tea E-commerce App",
       date: "Jan 29, 2018",
       excerpt: [
-      { title: "React.js" },
-      { title: "Nodejs" },
-      { title: "mongodb" },
-    ],
+        { title: "React.js" },
+        { title: "Nodejs" },
+        { title: "mongodb" },
+      ],
       src:
         "/assets/images/comrade.png",
       href: "#",
-      sourceCode:"link"
+      sourceCode: "link"
     },
     {
       title: "Leave Applay App",
       date: "Jan 29, 2018",
-     excerpt: [
-      { title: "Responsive UI with Next.js" },
-      
-    ],
+      excerpt: [
+        { title: "Responsive UI with Next.js" },
+
+      ],
       src:
         "/assets/images/Leav_app.png",
       href: "#",
-      sourceCode:"link"
+      sourceCode: "link"
     },
     {
       title: "Book Store",
       date: "Jan 29, 2018",
       excerpt: [
-      { title: "Responsive UI with Next.js" },
-     
-      { title: "Admin Dashboard" },
-    ],
+        { title: "Responsive UI with Next.js" },
+
+        { title: "Admin Dashboard" },
+      ],
       src:
         "/assets/images/BookStore.png",
       href: "#",
-      sourceCode:"Link"
+      sourceCode: "Link"
     },
     // {
     //   title: "Amazing Forth Title that is Quite Long",
@@ -119,22 +119,30 @@ const News = () => {
                       ))}
                     </div>
 
-                  <div className="flex justify-between ">
-                   <Link
-                      href={news.href}
-                      className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
-                    >
-                      Live preview<i className="fas fa-long-arrow-alt-right ml-1" />
-                    </Link>
+                    <div className="flex justify-between ">
+                      <div className="flex">
+                        <img src="/assets/images/external-link (1).png" className="text-white w-[10px] h-[10px]" />
+                        <Link
+                          href={news.href}
+                          className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                        >
 
-                    <Link
-                    href={news.sourceCode}
-                      className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
-                    >
-                      Source Code
-                    </Link>
-                  </div>
-                   
+                          Live preview<i className="fas fa-long-arrow-alt-right ml-1" />
+                        </Link>
+                      </div>
+
+                      <div>
+                        <Link
+                          href={news.sourceCode}
+                          className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                        >
+                          Source Code
+                        </Link>
+
+                      </div>
+
+                    </div>
+
                   </div>
                 </div>
               </div>
