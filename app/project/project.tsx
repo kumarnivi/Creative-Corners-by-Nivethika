@@ -73,9 +73,7 @@ const News = () => {
 
   return (
     <>
-
-
-      <section
+    <section
         className="relative bg-cover bg-center bg-no-repeat py-16 px-4 sm:px-10 max-auto"
         style={{ backgroundImage: 'url(/assets/images/projectbackground.avif)' }}
       >
@@ -120,21 +118,22 @@ const News = () => {
                     </div>
 
                     <div className="flex justify-between ">
-                      <div className="flex">
-                        <img src="/assets/images/external-link (1).png" className="text-white w-[10px] h-[10px]" />
+                      <div className="flex mt-4 " style={{alignItems:"center", justifyContent:"space-between", display:"flex"}}>
+                        <img src="/assets/images/external-link (1).png" className="text-white w-[15px] h-[15px]" />
                         <Link
                           href={news.href}
-                          className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                          className="inline-block text-sm text-gray-300 hover:text-yellow-400 transition-colors  px-3 py-1"
                         >
 
                           Live preview<i className="fas fa-long-arrow-alt-right ml-1" />
                         </Link>
                       </div>
 
-                      <div>
+                      <div className="flex mt-4 " style={{alignItems:"center", justifyContent:"space-between", display:"flex"}} >
+                         <img src="/assets/images/github.png" className="text-white w-[18px] h-[18px] bg-white rounded-full" />
                         <Link
                           href={news.sourceCode}
-                          className="inline-block mt-4 text-sm text-gray-300 hover:text-yellow-400 transition-colors border border-gray-500 rounded px-3 py-1"
+                          className="inline-block text-sm text-gray-300 hover:text-yellow-400 transition-colors px-3 py-1" 
                         >
                           Source Code
                         </Link>
