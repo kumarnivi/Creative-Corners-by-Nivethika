@@ -130,7 +130,7 @@ const News = () => {
                       </div>
 
                       <div className="flex mt-4 " style={{alignItems:"center", justifyContent:"space-between", display:"flex"}} >
-                         <img src="/assets/images/github.png" className="text-white w-[18px] h-[18px] bg-white rounded-full" />
+                         <img src="/assets/images/github.png" className="text-white w-[18px] h-[18px]  " />
                         <Link
                           href={news.sourceCode}
                           className="inline-block text-sm text-gray-300 hover:text-yellow-400 transition-colors px-3 py-1" 
