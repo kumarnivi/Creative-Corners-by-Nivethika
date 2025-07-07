@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 const butterflies = [
   {
     title: "Blue Morpho",
-    image: "/assets/images/angular.png",
+    image: "/assets/images/morpho.png",
     facts: [
       ["Scientific Name", "Morpho menelaus"],
       ["Region", "Central and South America"],
@@ -13,98 +13,55 @@ const butterflies = [
     ],
   },
   {
-    title: "Monarch Butterfly",
-    image: "/assets/images/angular.png",
+    title: "Rajah Brooke’s Birdwing",
+    image: "/assets/images/Flowbite.png",
     facts: [
-      ["Scientific Name", "Danaus plexippus"],
-      ["Region", "North America (migrates to Mexico)"],
-      ["Fact", "Known for its epic annual migration of up to 3,000 miles."],
+      ["Scientific Name", "Trogonoptera brookiana"],
+      ["Region", "Borneo, Malaysia"],
+      ["Fact", "Named after James Brooke, the “White Rajah” of Sarawak."],
     ],
   },
-  {
-    title: "Monarch Butterfly",
-    image: "/assets/images/angular.png",
-    facts: [
-      ["Scientific Name", "Danaus plexippus"],
-      ["Region", "North America (migrates to Mexico)"],
-      ["Fact", "Known for its epic annual migration of up to 3,000 miles."],
-    ],
-  },
-    {
-    title: "Monarch Butterfly",
-    image: "/assets/images/angular.png",
-    facts: [
-      ["Scientific Name", "Danaus plexippus"],
-      ["Region", "North America (migrates to Mexico)"],
-      ["Fact", "Known for its epic annual migration of up to 3,000 miles."],
-    ],
-  },
-  // ...add other butterfly data
 ];
 
 export default function ButterflyCarousel() {
   const [selected, setSelected] = useState(0);
-  const [rotation, setRotation] = useState(0);
 
-  const next = () => {
-    setSelected((prev) => (prev + 1) % butterflies.length);
-    setRotation((prev) => prev + 360 / butterflies.length);
-  };
-  const prev = () => {
-    setSelected((prev) => (prev - 1 + butterflies.length) % butterflies.length);
-    setRotation((prev) => prev - 360 / butterflies.length);
-  };
+  const next = () => setSelected((prev) => (prev + 1) % butterflies.length);
+  const prev = () => setSelected((prev) => (prev - 1 + butterflies.length) % butterflies.length);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[url('/bg-paper.webp')] bg-cover bg-no-repeat text-black">
-      <h1 className="text-3xl font-light mb-8">World Butterflies</h1>
-      <div className="relative w-[300px] sm:w-[400px] aspect-[3/4.25] overflow-hidden rounded-xl border border-gray-300 shadow-lg bg-white">
-        <div
-          className="absolute inset-0 flex items-center justify-center transition-transform duration-700 ease-in-out"
-          style={{ transform: `rotate(${rotation}deg)` }}
-        >
-          {butterflies.map((b, i) => (
-            <div
-              key={i}
-              className="absolute"
-              style={{
-                transform: `rotate(${(360 / butterflies.length) * i + 45}deg) translate(150px) rotate(90deg)`,
-              }}
-            >
-              <Image
-                src={b.image}
-                alt={b.title}
-                width={130}
-                height={130}
-                className="rotate-180 drop-shadow-lg"
-              />
-            </div>
-          ))}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1e1209] text-black">
+      <h1 className="text-3xl font-light mb-8 text-white">World Butterflies</h1>
+
+      <div className="relative w-[90%] max-w-md rounded-2xl border border-white/40 bg-white shadow-lg overflow-hidden transition-all duration-500">
+        {/* Top Green Section with Image */}
+        <div className="relative bg-green-200 pb-24 rounded-b-[80px]">
+          <div className="absolute inset-x-0 top-6 mx-auto w-48 h-48 flex items-center justify-center group transition-all duration-500 ease-in-out">
+            <Image
+              key={butterflies[selected].image}
+              src={butterflies[selected].image}
+              alt={butterflies[selected].title}
+              width={160}
+              height={160}
+              className="drop-shadow-2xl transition-transform duration-500 ease-in-out group-hover:scale-110"
+            />
+          </div>
         </div>
 
-        <div className="absolute bottom-0 w-full p-6 bg-white/80 backdrop-blur-md">
-          <article className="text-sm">
-            <h2 className="text-lg font-semibold mb-2">{butterflies[selected].title}</h2>
-            <ul className="space-y-1">
+        {/* Bottom Crumpled Section */}
+        <div className="bg-[url('/bg-paper.webp')] bg-cover bg-no-repeat px-6 pt-8 pb-10 transition-all duration-500">
+          <article className="text-sm text-black animate-fade-in">
+            <h2 className="text-xl font-semibold mb-3">{butterflies[selected].title}</h2>
+            <ul className="list-disc list-inside space-y-1">
               {butterflies[selected].facts.map(([label, value], idx) => (
                 <li key={idx}>
-                  <span className="text-gray-600 font-medium">{label}:</span> {value}
+                  <span className="text-gray-600 font-semibold">{label}:</span> {value}
                 </li>
               ))}
             </ul>
-            <div className="flex justify-center gap-4 mt-4">
-              <button
-                onClick={prev}
-                className="text-xl hover:text-blue-600 disabled:opacity-50"
-              >
-                &#10094;
-              </button>
-              <button
-                onClick={next}
-                className="text-xl hover:text-blue-600 disabled:opacity-50"
-              >
-                &#10095;
-              </button>
+            <div className="flex justify-center gap-6 mt-6 text-xl">
+              <button onClick={prev} className="hover:text-black text-gray-800">&#10094;</button>
+              <button onClick={next} className="hover:text-black text-gray-800">&#10095;</button>
             </div>
           </article>
         </div>
