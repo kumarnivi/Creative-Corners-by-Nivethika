@@ -1,0 +1,116 @@
+/* components/ButterflyCarousel.module.css */
+
+:root {
+  --radius: 300px;
+  --item-size: 130px;
+  --article-reveal-delay: 500ms;
+}
+
+.cards {
+  --width: 300px;
+  position: relative;
+  width: var(--width);
+  aspect-ratio: 3/4.25;
+  background-image: 
+    linear-gradient(rgba(208, 135, 0, 0.35), rgba(208, 135, 0, 0.35)),
+    url("/bg-paper-2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 10px;
+  color: black;
+  display: grid;
+}
+
+.circleContainer {
+  position: absolute;
+  top: calc(var(--radius) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  width: var(--item-size);
+  height: var(--item-size);
+  transition: rotate 500ms ease-in-out;
+}
+
+.circleItem {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+}
+
+.butterflyImg {
+  width: 100%;
+  object-fit: cover;
+  transform: rotate(180deg);
+  filter: drop-shadow(6px 14px 5px rgba(0, 0, 0, 0.35));
+}
+
+.contents {
+  margin-top: var(--item-size);
+  padding: 2rem 2rem 1rem;
+  display: grid;
+}
+
+.contents article {
+  grid-area: 1/1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  transform: translateY(20px);
+}
+
+.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+  transition-delay: var(--article-reveal-delay);
+}
+
+.contents h2 {
+  font-size: 1rem;
+  margin: 1rem 0;
+  font-weight: 300;
+}
+
+.contents ul {
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contents li span {
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 150ms ease-in-out;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.buttons button:hover {
+  color: steelblue;
+}
+
+.buttons button:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}

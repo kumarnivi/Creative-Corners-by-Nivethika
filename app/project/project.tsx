@@ -1,7 +1,7 @@
 // pages/news.tsx or components/News.tsx
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
+
 
 const News = () => {
   const newsData = [
@@ -43,32 +43,6 @@ const News = () => {
       href: "#",
       sourceCode: "Link"
     },
-    // {
-    //   title: "Amazing Forth Title that is Quite Long",
-    //   date: "Jan 29, 2018",
-    //   excerpt: "Lorem ipsum dolor sit amet!",
-    //   src:
-    //     "/assets/images/angular.png",
-    //   href: "#",
-    // },
-    // {
-    //   title: "Amazing Fifth Title",
-    //   date: "Jan 29, 2018",
-    //   excerpt:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat...",
-    //   src:
-    //     "/assets/images/angular.png",
-    //   href: "#",
-    // },
-    // {
-    //   title: "Amazing 6th Title",
-    //   date: "Jan 29, 2018",
-    //   excerpt:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat?",
-    //   src:
-    //     "/assets/images/angular.png",
-    //   href: "#",
-    // },
   ];
 
   return (
@@ -149,9 +123,10 @@ const News = () => {
           </div>
         </div>
 
+
+
+
       </section>
-
-
     </>
   );
 };

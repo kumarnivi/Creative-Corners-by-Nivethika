@@ -4,6 +4,7 @@ import AboutSection from "./about/about";
 import SkillsSection from "./skills/skills";
 import ExperienceSection from "./experience/experience";
 import Projects from "./project/project";
+import ButterflyCarousel from "./components/ButterflyCarousel";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <AboutSection/>
     <SkillsSection/>
     <ExperienceSection/>
+    <ButterflyCarousel/>
     <Projects />
     </>
   
