@@ -7,6 +7,9 @@ import 'swiper/css/navigation';
 
 import Image from 'next/image';
 
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+
 const skills = [
   {
     title: 'Nodejs',
@@ -80,7 +83,34 @@ const skills = [
  
 ];
 
+
+
+
+
 const SkillsSection = () => {
+const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+
+  useEffect(() => {
+    // Animate all slides when component mounts
+    slideRefs.current.forEach((el, i) => {
+      if (el) {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: i * 0.2,
+            ease: 'power3.out',
+          }
+        );
+      }
+    });
+  }, []);
+
+
   return (
     <section className="relative bg-[#2c012d] py-16 px-4 sm:px-10">
      <div className="text-center mb-10">
@@ -113,7 +143,9 @@ const SkillsSection = () => {
       >
         {skills.map((skill, index) => (
        <SwiperSlide key={index} className="h-full">
-  <div className="h-full bg-gradient-to-br from-[#121212b9] to-[#930e66] rounded-2xl shadow-lg   p-6 flex flex-col justify-between" id='skills'>
+  <div  ref={(el) => {
+      slideRefs.current[index] = el;
+    }}  className="h-full bg-gradient-to-br from-[#121212b9] to-[#930e66] rounded-2xl shadow-lg   p-6 flex flex-col justify-between" id='skills'>
     <div>
       <h2 className="text-[#eba2d3] text-lg font-bold mb-4">
         {skill.title}
