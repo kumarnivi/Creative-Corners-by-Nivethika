@@ -2,45 +2,58 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const butterflies = [
+const newsData = [
   {
-    title: "Blue Morpho",
-    image: "/assets/images/morpho.png",
-    facts: [
-      ["Scientific Name", "Morpho menelaus"],
-      ["Region", "Central and South America"],
-      ["Fact", "Its iridescent blue wings can reflect light and confuse predators."],
+    title: "Tea E-commerce App",
+    date: "Jan 29, 2018",
+    excerpt: [
+      { title: "React.js" },
+      { title: "Nodejs" },
+      { title: "mongodb" },
     ],
+    src: "/assets/images/comrade.png",
+    href: "#",
+    sourceCode: "link",
   },
   {
-    title: "Rajah Brooke’s Birdwing",
-    image: "/assets/images/Flowbite.png",
-    facts: [
-      ["Scientific Name", "Trogonoptera brookiana"],
-      ["Region", "Borneo, Malaysia"],
-      ["Fact", "Named after James Brooke, the “White Rajah” of Sarawak."],
+    title: "Leave Applay App",
+    date: "Jan 29, 2018",
+    excerpt: [{ title: "Responsive UI with Next.js" }],
+    src: "/assets/images/Leav_app.png",
+    href: "#",
+    sourceCode: "link",
+  },
+  {
+    title: "Book Store",
+    date: "Jan 29, 2018",
+    excerpt: [
+      { title: "Responsive UI with Next.js" },
+      { title: "Admin Dashboard" },
     ],
+    src: "/assets/images/BookStore.png",
+    href: "#",
+    sourceCode: "Link",
   },
 ];
 
-export default function ButterflyCarousel() {
+export default function NewsCarousel() {
   const [selected, setSelected] = useState(0);
 
-  const next = () => setSelected((prev) => (prev + 1) % butterflies.length);
-  const prev = () => setSelected((prev) => (prev - 1 + butterflies.length) % butterflies.length);
+  const next = () => setSelected((prev) => (prev + 1) % newsData.length);
+  const prev = () => setSelected((prev) => (prev - 1 + newsData.length) % newsData.length);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1e1209] text-black">
-      <h1 className="text-3xl font-light mb-8 text-white">World Butterflies</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1e1209] text-white">
+      <h1 className="text-3xl font-light mb-8">My Projects</h1>
 
-      <div className="relative w-[90%] max-w-md rounded-2xl border border-white/40 bg-white shadow-lg overflow-hidden transition-all duration-500">
-        {/* Top Green Section with Image */}
-        <div className="relative bg-green-200 pb-24 rounded-b-[80px]">
+      <div className="relative w-[90%] max-w-md rounded-2xl border border-white/40 bg-white shadow-lg overflow-hidden transition-all duration-500 text-black">
+        {/* Top Section with Image */}
+        <div className="relative bg-gray-200 pb-24 rounded-b-[80px]">
           <div className="absolute inset-x-0 top-6 mx-auto w-48 h-48 flex items-center justify-center group transition-all duration-500 ease-in-out">
             <Image
-              key={butterflies[selected].image}
-              src={butterflies[selected].image}
-              alt={butterflies[selected].title}
+              key={newsData[selected].src}
+              src={newsData[selected].src}
+              alt={newsData[selected].title}
               width={160}
               height={160}
               className="drop-shadow-2xl transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -48,17 +61,32 @@ export default function ButterflyCarousel() {
           </div>
         </div>
 
-        {/* Bottom Crumpled Section */}
+        {/* Bottom Paper Section */}
         <div className="bg-[url('/bg-paper.webp')] bg-cover bg-no-repeat px-6 pt-8 pb-10 transition-all duration-500">
           <article className="text-sm text-black animate-fade-in">
-            <h2 className="text-xl font-semibold mb-3">{butterflies[selected].title}</h2>
+            <h2 className="text-xl font-semibold mb-1">{newsData[selected].title}</h2>
+            <p className="text-gray-600 text-sm mb-3">{newsData[selected].date}</p>
             <ul className="list-disc list-inside space-y-1">
-              {butterflies[selected].facts.map(([label, value], idx) => (
-                <li key={idx}>
-                  <span className="text-gray-600 font-semibold">{label}:</span> {value}
-                </li>
+              {newsData[selected].excerpt.map((item, idx) => (
+                <li key={idx}>{item.title}</li>
               ))}
             </ul>
+            <div className="flex justify-between items-center mt-6">
+              <a
+                href={newsData[selected].href}
+                className="text-sm text-blue-600 underline"
+                target="_blank"
+              >
+                Live Demo
+              </a>
+              <a
+                href={newsData[selected].sourceCode}
+                className="text-sm text-blue-600 underline"
+                target="_blank"
+              >
+                Source Code
+              </a>
+            </div>
             <div className="flex justify-center gap-6 mt-6 text-xl">
               <button onClick={prev} className="hover:text-black text-gray-800">&#10094;</button>
               <button onClick={next} className="hover:text-black text-gray-800">&#10095;</button>
