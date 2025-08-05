@@ -51,6 +51,18 @@ const News = () => {
       href: "#",
       sourceCode: "Link",
     },
+    {
+      title: "Bloggy APp",
+      date: "August 05, 2025",
+      excerpt: [
+        { title: "Responsive UI with Next.js" },
+        { title: "Admin Dashboard" },
+      ],
+      src: "/assets/images/bloggy_app.png",
+      href: "https://bloggy-chi-blond.vercel.app/",
+      sourceCode: "https://github.com/kumarnivi/Bloggy",
+    },
+    
   ];
 
   return (
@@ -117,6 +129,7 @@ const News = () => {
                       />
                       <Link
                         href={news.href}
+                        target="_blank"
                         className="inline-block text-sm text-gray-300 hover:text-yellow-400 transition-colors px-3 py-1"
                       >
                         Live preview
@@ -136,6 +149,7 @@ const News = () => {
                         className="text-white w-[18px] h-[18px]"
                       />
                       <Link
+                        target="_blank"
                         href={news.sourceCode}
                         className="inline-block text-sm text-gray-300 hover:text-yellow-400 transition-colors px-3 py-1"
                       >
