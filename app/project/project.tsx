@@ -29,8 +29,8 @@ const News = () => {
         { title: "mongodb" },
       ],
       src: "/assets/images/comrade.png",
-      href: "#",
-      sourceCode: "link",
+      href: "https://comrade-re-developed-users.vercel.app/",
+      sourceCode: "https://github.com/kumarnivi/comrade-re-developed-Users",
     },
     {
       title: "Leave Applay App",
@@ -38,7 +38,7 @@ const News = () => {
       excerpt: [{ title: "Responsive UI with Next.js" }],
       src: "/assets/images/Leav_app.png",
       href: "#",
-      sourceCode: "link",
+      sourceCode: "https://github.com/kumarnivi/EY_leave_APP",
     },
     {
       title: "Book Store",
