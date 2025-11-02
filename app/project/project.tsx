@@ -37,7 +37,7 @@ const News = () => {
       date: "Jan 29, 2018",
       excerpt: [{ title: "Responsive UI with Next.js" }],
       src: "/assets/images/Leav_app.png",
-      href: "#",
+      href: "https://employee-app-yt3v.vercel.app/",
       sourceCode: "https://github.com/kumarnivi/EY_leave_APP",
     },
     {
@@ -52,7 +52,7 @@ const News = () => {
       sourceCode: "Link",
     },
     {
-      title: "Bloggy APp",
+      title: "Bloggy App",
       date: "August 05, 2025",
       excerpt: [
         { title: "Responsive UI with Next.js" },
